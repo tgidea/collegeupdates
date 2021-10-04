@@ -11,7 +11,12 @@ const staticPath = path.join(__dirname, "../public");
 app.use(express.static(staticPath));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "../public", 'main.html'))
+    try {
+        res.sendFile(path.join(__dirname, "../public", 'main.html'))
+    }
+    catch (err) {
+        res.send("There is some issue. Kindly check your network connection ");
+    }
 })
 
 app.use(express.static(path.join(__dirname, "../public")));
@@ -51,40 +56,44 @@ app.get('/jcbose', (req, res) => {
 app.get('/dcrust', (req, res) => {
 
     async () => {
-    try {
-        var i = 0;
-       await axios('http://www.dcrustm.ac.in/')
-            .then(res => {
-                const html = res.data;
-                const $ = cheerio.load(html);
-                // console.log(html);
-                const articles = [];
-                $('.wpb_wrapper', html)
-                    .each(function () {
-                        $(this).find('p').each(function () {
-                            i++;
-                            const url = $(this).find('a').attr('href');
-                            const title = $(this).find('a').text();
-                            if (i > 7 && i < 17) {
-                                articles.push({ title, url });
-                            }
-                        })
-                    });
-                // console.log(articles);
-                fs.writeFile(path.join(__dirname, '../public/', 'dcrust.json'), JSON.stringify(articles, null, 2), (err) => {
-                    if (err) {
-                        console.log(err);
-                    }
-                    // console.log("successfully written")
+        try {
+            var i = 0;
+            await axios('http://www.dcrustm.ac.in/')
+                .then(res => {
+                    const html = res.data;
+                    const $ = cheerio.load(html);
+                    // console.log(html);
+                    const articles = [];
+                    $('.wpb_wrapper', html)
+                        .each(function () {
+                            $(this).find('p').each(function () {
+                                i++;
+                                const url = $(this).find('a').attr('href');
+                                const title = $(this).find('a').text();
+                                if (i > 7 && i < 17) {
+                                    articles.push({ title, url });
+                                }
+                            })
+                        });
+                    // console.log(articles);
+                    fs.writeFile(path.join(__dirname, '../public/', 'dcrust.json'), JSON.stringify(articles, null, 2), (err) => {
+                        if (err) {
+                            console.log(err);
+                        }
+                        // console.log("successfully written")
+                    })
                 })
-            })
-            .catch(err => console.log(err))
-    }
-    catch (err) {
-        console.log(err)
-    }
+                .catch(err => console.log(err))
+        }
+        catch (err) {
+            console.log(err)
+        }
     }
     res.sendFile(path.join(__dirname, "../public", 'dcrust.html'));
+})
+
+app.get('*',(req,res)=>{
+    res.send('<h1>Error:404</h1><br><h3>Page not found</h3>');
 })
 
 
