@@ -6,7 +6,7 @@ const showData = (articles) => {
         var output = "";
         if (artitem[i].finalurl == "undefined") {
             output += `
-            <div class="card text-center border-danger">
+            <div class="card text-center border-success">
                  <div class="card-body ">
                      <p class="card-text card-header ">${artitem[i].title}</p>
                 </div>
