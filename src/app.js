@@ -53,7 +53,7 @@ app.get('/jcbose', (req, res) => {
     res.sendFile(path.join(__dirname, "../public", 'jcbose.html'));
 
 })
-
+//dcrust: to add data to dcrust.json
 app.get('/dcrust', (req, res) => {
 
     async () => {
@@ -93,6 +93,7 @@ app.get('/dcrust', (req, res) => {
     res.sendFile(path.join(__dirname, "../public", 'dcrust.html'));
 })
 
+////dtu: to add data to dtu.json
 app.get('/dtu', (req, res) => {
     
     // async () => {
