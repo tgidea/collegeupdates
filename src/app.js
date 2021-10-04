@@ -11,7 +11,7 @@ const staticPath = path.join(__dirname, "../public");
 app.use(express.static(staticPath));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "../public", 'index.html'))
+    res.sendFile(path.join(__dirname, "../public", 'main.html'))
 })
 
 app.use(express.static(path.join(__dirname, "../public")));
