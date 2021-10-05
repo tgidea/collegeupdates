@@ -65,16 +65,20 @@ app.get('/dcrust', (req, res) => {
                     const $ = cheerio.load(html);
                     // console.log(html);
                     const articles = [];
+                    var wpbcount=0;
                     $('.wpb_wrapper', html)
                         .each(function () {
-                            $(this).find('p').each(function () {
-                                i++;
-                                const url = $(this).find('a').attr('href');
-                                const title = $(this).find('a').text();
-                                if (i > 7 && i < 17) {
-                                    articles.push({ title, url });
-                                }
-                            })
+                            wpbcount++;                            
+                            if(wpbcount>5){
+                                $(this).find('a').each(function () {
+                                    i++;
+                                    const url = $(this).attr('href');
+                                    const title = $(this).text();
+                                    if ( i < 25) {
+                                        articles.push({ title, url });
+                                    }
+                                })
+                            }
                         });
                     // console.log(articles);
                     fs.writeFile(path.join(__dirname, '../public/', 'dcrust.json'), JSON.stringify(articles, null, 2), (err) => {
