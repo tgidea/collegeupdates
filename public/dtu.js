@@ -14,10 +14,10 @@ const showData = (articles) => {
         }
         else{
         output += `
-    <div class="card text-center border-danger">
+    <div class="card text-center border-success">
      <div class="card-body ">
      <p class="card-text card-header ">${artitem[i].title}</p>
-    <a href="${artitem[i].finalurl}" class="btn btn-danger">PDF</a>
+    <a href="${artitem[i].finalurl}" class="btn btn-success">PDF</a>
        </div>
      </div>`
         }

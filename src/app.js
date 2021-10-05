@@ -56,10 +56,10 @@ app.get('/jcbose', (req, res) => {
 //dcrust: to add data to dcrust.json
 app.get('/dcrust', (req, res) => {
 
-    async () => {
+    
         try {
             var i = 0;
-            await axios('http://www.dcrustm.ac.in/')
+             axios('http://www.dcrustm.ac.in/')
                 .then(res => {
                     const html = res.data;
                     const $ = cheerio.load(html);
@@ -89,7 +89,7 @@ app.get('/dcrust', (req, res) => {
         catch (err) {
             console.log(err)
         }
-    }
+    
     res.sendFile(path.join(__dirname, "../public", 'dcrust.html'));
 })
 
