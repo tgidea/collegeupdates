@@ -6,7 +6,7 @@ const fs = require('fs');
 let lastUpdated = 0;
 
 const dtuupd = function (res) {
-    if (Date.now() - lastUpdated > 3600000) {
+    if (Date.now() - lastUpdated > 300000) {
         lastUpdated = Date.now();
         try {
             var i = 0;

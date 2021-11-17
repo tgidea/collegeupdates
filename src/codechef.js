@@ -5,7 +5,7 @@ const axios = require('axios');
 const fs = require('fs');
 let lastUpdated = 0;
 const codechefupd = function (resp) {
-    if (Date.now() - lastUpdated > 3600000) {
+    if (Date.now() - lastUpdated > 300000) {
         lastUpdated=Date.now();
         console.log('active')
         try {

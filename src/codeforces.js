@@ -7,7 +7,7 @@ const { data } = require('cheerio/lib/api/attributes');
 let lastUpdated = 0;
 
 const codeforcesupd = function (resp) {
-    if (Date.now() - lastUpdated > 3600000) {
+    if (Date.now() - lastUpdated > 600000) {
         lastUpdated = Date.now();
         console.log('active');
         try {

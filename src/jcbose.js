@@ -6,7 +6,7 @@ const fs = require('fs');
 let lastUpdated = 0;
 
 const jcboseupd = function (res) {
-    if (Date.now() - lastUpdated > 3600000) {
+    if (Date.now() - lastUpdated > 300000) {
         lastUpdated = Date.now();
         try {
             axios('https://www.jcboseust.ac.in/content/all_notices/general-notices')
