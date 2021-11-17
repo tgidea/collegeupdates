@@ -3,6 +3,11 @@ const path = require('path')
 const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
+const jcboseupd=require('./jcbose');
+const dcrustupd = require('./dcrust');
+const dtuupd=require('./dtu');
+const codechefupd=require('./codechef');
+const codeforcesupd=require('./codeforces');
 
 const app = express();
 
@@ -20,132 +25,26 @@ app.get('/', (req, res) => {
 })
 
 app.use(express.static(path.join(__dirname, "../public")));
-app.get('/jcbose', (req, res) => {
-    
-    try {
-        axios('https://www.jcboseust.ac.in/content/all_notices/general-notices')
-            .then(res => {
-                const html = res.data;
-                var i = 0;
-                const $ = cheerio.load(html);
-                const articles = [];
-                $('.views-row', html).each(function () {
-                    const date = $(this).find('p').text();
-                    const url = $(this).find('a').attr('href');
-                    const title = $(this).find('a').text();
-                    i++;
-                    if (i < 15) {
-                        articles.push({ date, title, url });
-                    }
-                });
-
-                fs.writeFile(path.join(__dirname, '../public/', 'jcbose.json'), JSON.stringify(articles, null, 2), (err) => {
-                    if (err) {
-                        console.log(err);
-                    }
-                    // console.log("successfully written")
-                })
-            })
-            .catch(err => console.log(err));
-    }
-    catch (err) { console.log(err) }
-
-    res.sendFile(path.join(__dirname, "../public", 'jcbose.html'));
-
+app.get('/jcbose', async(req, res) => {
+     jcboseupd(res);
 })
-//dcrust: to add data to dcrust.json
-app.get('/dcrust', (req, res) => {
 
-    
-        try {
-            var i = 0;
-             axios('http://www.dcrustm.ac.in/')
-                .then(res => {
-                    const html = res.data;
-                    const $ = cheerio.load(html);
-                    // console.log(html);
-                    const articles = [];
-                    var wpbcount=0;
-                    $('.wpb_wrapper', html)
-                        .each(function () {
-                            wpbcount++;                            
-                            if(wpbcount>5){
-                                $(this).find('a').each(function () {
-                                    i++;
-                                    const url = $(this).attr('href');
-                                    const title = $(this).text();
-                                    if ( i < 25) {
-                                        articles.push({ title, url });
-                                    }
-                                })
-                            }
-                        });
-                    // console.log(articles);
-                    fs.writeFile(path.join(__dirname, '../public/', 'dcrust.json'), JSON.stringify(articles, null, 2), (err) => {
-                        if (err) {
-                            console.log(err);
-                        }
-                        // console.log("successfully written")
-                    })
-                })
-                .catch(err => console.log(err))
-        }
-        catch (err) {
-            console.log(err)
-        }
-    
-    res.sendFile(path.join(__dirname, "../public", 'dcrust.html'));
+//dcrust: to add data to dcrust.json
+app.get('/dcrust', async(req, res) => {
+       dcrustupd(res);
 })
 
 ////dtu: to add data to dtu.json
 app.get('/dtu', (req, res) => {
-    
-    // async () => {
-        try {
-            var i = 0;
-             axios('http://dtu.ac.in')
-                .then(res => {
-                    
-                    const html = res.data;
-                    const $ = cheerio.load(html);
-                    const articles = [];
-                    $('#tab4', html).each(function () {
-                        
-                        $(this).find('li').each(function () {
-                            $(this).find('a').each(function () {
-                                
-                                const url = $(this).attr('href');
-                                var finalurl='undefined';
-                                const title = $(this).text();
-                                if (url != undefined) {
-                                    if (url[0] == 'h')
-                                        var finalurl = `${url}`;
-                                    else {
-                                        const len = url.length;    
-                                        const url2 = url.slice(1,len);
-                                         finalurl = `http://dtu.ac.in${url2}`;
-                                    }
-                                }
-                                i++;
-                                if (i < 50) {
-                                    articles.push({ title, finalurl });
-                                }
-                            })
-                        })
-                        // }
-                    });
-                    
-                    fs.writeFile((path.join(__dirname, '../public/', 'dtu.json')), JSON.stringify(articles, null, 2), (err) => {
-                        if (err) {
-                            console.log(err);
-                        }
-                    })
-                })
-                .catch(err => console.log(err));
-        }
-        catch (err) { console.log(err) }
-    // }
-    res.sendFile(path.join(__dirname, "../public", 'dtu.html'));
+    dtuupd(res);  
+})
+
+app.get('/codechef', (req, res) => {
+    codechefupd(res);  
+})
+
+app.get('/codeforces', (req, res) => {
+    codeforcesupd(res);  
 })
 
 app.get('*',(req,res)=>{
