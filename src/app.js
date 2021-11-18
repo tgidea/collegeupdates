@@ -6,6 +6,8 @@ const fs = require('fs');
 const jcboseupd=require('./jcbose');
 const dcrustupd = require('./dcrust');
 const dtuupd=require('./dtu');
+const mduupd=require('./mdu');
+const gjuupd=require('./gju');
 const codechefupd=require('./codechef');
 const codeforcesupd=require('./codeforces');
 
@@ -37,6 +39,14 @@ app.get('/dcrust', async(req, res) => {
 ////dtu: to add data to dtu.json
 app.get('/dtu', (req, res) => {
     dtuupd(res);  
+})
+
+app.get('/mdu', (req, res) => {
+    mduupd(res);  
+})
+
+app.get('/gju', (req, res) => {
+    gjuupd(res);  
 })
 
 app.get('/codechef', (req, res) => {
