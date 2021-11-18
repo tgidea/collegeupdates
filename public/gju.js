@@ -7,8 +7,8 @@ const showData = (articles) => {
         output += `
     <div class="card text-center " style="border-color:pink;">
      <div class="card-body ">
-     <p class="card-text pink card-header ">${artitem[i].title}</p>
-     <a class="btn-pink " style="color:white" href="${artitem[i].url}">PDF</a>
+     <p class="card-text  card-header ">${artitem[i].title}</p>
+     <a class="btn-pink " style="color:white; text-decoration:none;" href="${artitem[i].url}">PDF</a>
     
        </div>
      </div>`
@@ -18,7 +18,7 @@ const showData = (articles) => {
 const fetching = () => {
     try {
         //remove . from here
-        fetch("mdu.json")
+        fetch("gju.json")
             .then(function (resp) {
                 return resp.json();
             })
