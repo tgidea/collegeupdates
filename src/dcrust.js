@@ -5,12 +5,12 @@ const axios = require('axios');
 const fs = require('fs');
 let lastUpdated = 0;
 
-const dcrustupd = function (res) {
+const dcrustupd = async (res) =>{
     if (Date.now() - lastUpdated > 300000) {
         lastUpdated = Date.now();
         try {
             var i = 0;
-            axios('http://www.dcrustm.ac.in/')
+           await axios('http://www.dcrustm.ac.in/')
                 .then(res => {
                     const html = res.data;
                     const $ = cheerio.load(html);

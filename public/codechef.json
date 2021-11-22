@@ -1,23 +1,16 @@
 [
   {
-    "day": "21",
+    "day": "24",
     "month": "Nov",
-    "name": "Weekends With Champions",
-    "time": "03:00 PM IST",
-    "link": "https://bit.ly/3qLLcJe"
+    "name": "C.O.D.E.R.S",
+    "time": "08:00 PM IST",
+    "link": "https://www.codechef.com/FOUR21?itm_medium=hpevents&itm_campaign=Coders"
   },
   {
-    "day": "21",
+    "day": "26",
     "month": "Nov",
-    "name": "SnackDown 2021 Pre-Elimination",
+    "name": "Fizzbuzz",
     "time": "09:00 PM IST",
-    "link": "https://www.codechef.com/SNCKPE21?itm_medium=hpevents&itm_campaign=CC_SnackDown_2021"
-  },
-  {
-    "day": "21",
-    "month": "Nov",
-    "name": "November Cook-Off",
-    "time": "09:00 PM IST",
-    "link": "https://www.codechef.com/COOK135?itm_medium=hpevents&itm_campaign=NovCook"
+    "link": "https://www.codechef.com/FZBZ2021?itm_medium=hpevents&itm_campaign=FizzBuzz"
   }
 ]

@@ -3,10 +3,10 @@ const path = require('path')
 const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
-let lastUpdated = 0;
-const codechefupd = function (resp) {
-    if (Date.now() - lastUpdated > 300000) {
-        lastUpdated=Date.now();
+// let lastUpdated = 0;
+const codechefupd = function () {
+    // if (Date.now() - lastUpdated > 300000) {
+        // lastUpdated=Date.now();
         console.log('active')
         try {
             axios('https://www.codechef.com/')
@@ -46,8 +46,8 @@ const codechefupd = function (resp) {
         }
         catch (err) { console.log('codechef err3') }
 
-    }
-    resp.sendFile(path.join(__dirname, "../public", 'codechef.html'));
+    // }
+    // resp.sendFile(path.join(__dirname, "../public", 'codechef.html'));
 }
 // var s = "hello"
 // codechefupd(s);

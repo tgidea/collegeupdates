@@ -5,11 +5,11 @@ const axios = require('axios');
 const fs = require('fs');
 let lastUpdated = 0;
 
-const jcboseupd = function (res) {
+const jcboseupd = async (res) => {
     if (Date.now() - lastUpdated > 300000) {
         lastUpdated = Date.now();
         try {
-            axios('https://www.jcboseust.ac.in/content/all_notices/general-notices')
+            await axios('https://www.jcboseust.ac.in/content/all_notices/general-notices')
                 .then(res => {
                     const html = res.data;
                     var i = 0;

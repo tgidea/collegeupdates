@@ -5,12 +5,12 @@ const axios = require('axios');
 const fs = require('fs');
 let lastUpdated = 0;
 
-const dtuupd = function (res) {
+const dtuupd = async (res)=> {
     if (Date.now() - lastUpdated > 300000) {
         lastUpdated = Date.now();
         try {
             var i = 0;
-            axios('http://dtu.ac.in')
+          await  axios('http://dtu.ac.in')
                 .then(res => {
 
                     const html = res.data;

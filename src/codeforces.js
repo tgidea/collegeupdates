@@ -4,11 +4,11 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
 const { data } = require('cheerio/lib/api/attributes');
-let lastUpdated = 0;
+// let lastUpdated = 0;
 
-const codeforcesupd = function (resp) {
-    if (Date.now() - lastUpdated > 600000) {
-        lastUpdated = Date.now();
+const codeforcesupd = function () {
+    // if (Date.now() - lastUpdated > 600000) {
+        // lastUpdated = Date.now();
         console.log('active');
         try {
             axios('https://codeforces.com/contests')
@@ -65,8 +65,8 @@ const codeforcesupd = function (resp) {
                 .catch(err => console.log(err));
         }
         catch (err) { console.log('codechef err3') }
-    }
-    resp.sendFile(path.join(__dirname, "../public", 'codeforces.html'));
+    // }
+    // resp.sendFile(path.join(__dirname, "../public", 'codeforces.html'));
 
 
 }
