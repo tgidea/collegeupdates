@@ -17,7 +17,8 @@ const port = process.env.PORT || 8000;
 const staticPath = path.join(__dirname, "../public");
 app.use(express.static(staticPath));
 
-
+codechefupd();
+codeforcesupd();
 const update=setInterval(function(){
     codechefupd();
     codeforcesupd();

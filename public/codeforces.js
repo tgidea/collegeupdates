@@ -41,6 +41,7 @@ const showData = (articles) => {
      <div class="card-body ">
      <p class="card-text font-weight-bold text-primary card-header ">${artitem[i].name}</p>
      <p class="card-text card-header ">Duration : ${artitem[i].duration}</p>
+     <p class="card-text card-header "> ${artitem[i].toStart}</p>
      <p class="card-text card-header "><a href="${artitem[i].link}" class="btn btn-primary">${time}</a></p>
        </div>
      </div>`
