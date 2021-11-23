@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
 // let lastUpdated = 0;
-const codechefupd = function () {
+const codechefupd = function (codePrevUpd) {
     // if (Date.now() - lastUpdated > 300000) {
         // lastUpdated=Date.now();
         console.log('active')
@@ -32,7 +32,7 @@ const codechefupd = function () {
                         $(this).find('.m-card-3__dtl-btn').each(function () {
                             link = $(this).attr('href');
                         })
-                        articles.push({ day, month, name, time, link });
+                        articles.push({codePrevUpd, day, month, name, time, link });
                         // console.log(articles);
                     })
                     fs.writeFile(path.join(__dirname, '../public/', 'codechef.json'), JSON.stringify(articles, null, 2), (err) => {

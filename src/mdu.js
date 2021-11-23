@@ -3,14 +3,14 @@ const path = require('path')
 const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
-let lastUpdated = 0;
+// let lastUpdated = 0;
 
-const mduupd = async (res)=> {
-    if (Date.now() - lastUpdated > 300000) {
-        lastUpdated = Date.now();
+const mduupd = function (clgPrevUpd) {
+    // if (Date.now() - lastUpdated > 300000) {
+        // lastUpdated = Date.now();
         try {
             var i = 0;
-            await axios('https://mdu.ac.in/')
+             axios('https://mdu.ac.in/')
                 .then(res => {
                     const html = res.data;
                     const $ = cheerio.load(html);
@@ -30,7 +30,7 @@ const mduupd = async (res)=> {
                             $(this).find('.DateNews').each(function () {
                                 date = $(this).text();
                             })
-                            articles.push({ title, date, url });
+                            articles.push({clgPrevUpd, title, date, url });
 
                         });
                     // console.log(articles);
@@ -46,8 +46,8 @@ const mduupd = async (res)=> {
         catch (err) {
             console.log('error occur3')
         }
-    }
-    res.sendFile(path.join(__dirname, "../public", 'mdu.html'));
+    // }
+    // res.sendFile(path.join(__dirname, "../public", 'mdu.html'));
 }
 // var s = "hello";
 // dcrustupd(s);

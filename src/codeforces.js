@@ -6,7 +6,7 @@ const fs = require('fs');
 const { data } = require('cheerio/lib/api/attributes');
 // let lastUpdated = 0;
 
-const codeforcesupd = function () {
+const codeforcesupd = function (codePrevUpd) {
     // if (Date.now() - lastUpdated > 600000) {
         // lastUpdated = Date.now();
         console.log('active');
@@ -45,7 +45,7 @@ const codeforcesupd = function () {
                                     j++;
                                 })
                                 if (name != undefined) {
-                                    articles.push({ name, time, duration, toStart, toRegister, link });
+                                    articles.push({codePrevUpd, name, time, duration, toStart, toRegister, link });
                                 }
                             })
                             // console.log(articles);

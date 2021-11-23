@@ -3,14 +3,14 @@ const path = require('path')
 const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
-let lastUpdated = 0;
+// let lastUpdated = 0;
 
-const dcrustupd = async (res) =>{
-    if (Date.now() - lastUpdated > 300000) {
-        lastUpdated = Date.now();
+const dcrustupd = function (clgPrevUpd) {
+    // if (Date.now() - lastUpdated > 300000) {
+        // lastUpdated = Date.now();
         try {
             var i = 0;
-           await axios('http://www.dcrustm.ac.in/')
+            axios('http://www.dcrustm.ac.in/')
                 .then(res => {
                     const html = res.data;
                     const $ = cheerio.load(html);
@@ -26,7 +26,7 @@ const dcrustupd = async (res) =>{
                                     const url = $(this).attr('href');
                                     const title = $(this).text();
                                     if (i < 25) {
-                                        articles.push({ title, url });
+                                        articles.push({clgPrevUpd, title, url });
                                     }
                                 })
                             }
@@ -44,8 +44,8 @@ const dcrustupd = async (res) =>{
         catch (err) {
             console.log('error occur3')
         }
-    }
-    res.sendFile(path.join(__dirname, "../public", 'dcrust.html'));
+    // }
+    // res.sendFile(path.join(__dirname, "../public", 'dcrust.html'));
 }
 
 module.exports = dcrustupd;

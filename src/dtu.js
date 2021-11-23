@@ -3,14 +3,14 @@ const path = require('path')
 const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
-let lastUpdated = 0;
+// let lastUpdated = 0;
 
-const dtuupd = async (res)=> {
-    if (Date.now() - lastUpdated > 300000) {
-        lastUpdated = Date.now();
+const dtuupd = function (clgPrevUpd) {
+    // if (Date.now() - lastUpdated > 300000) {
+        // lastUpdated = Date.now();
         try {
             var i = 0;
-          await  axios('http://dtu.ac.in')
+            axios('http://dtu.ac.in')
                 .then(res => {
 
                     const html = res.data;
@@ -35,7 +35,7 @@ const dtuupd = async (res)=> {
                                 }
                                 i++;
                                 if (i < 50) {
-                                    articles.push({ title, finalurl });
+                                    articles.push({clgPrevUpd, title, finalurl });
                                 }
                             })
                         })
@@ -51,7 +51,7 @@ const dtuupd = async (res)=> {
                 .catch(err => console.log('dtu err2'));
         }
         catch (err) { console.log('dtu err3') }
-    }
-    res.sendFile(path.join(__dirname, "../public", 'dtu.html'));
+    // }
+    // res.sendFile(path.join(__dirname, "../public", 'dtu.html'));
 }
 module.exports = dtuupd;

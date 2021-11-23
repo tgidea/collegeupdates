@@ -1,6 +1,33 @@
+
+const showTime = function (data) {
+
+    const setTime = setInterval(function () {
+        const tim = 180 - Math.ceil((Date.now() - data) / 1000);
+        var ans;
+        if (tim == NaN || tim == undefined) {
+            ans = "";
+            return;
+        }
+        else if (tim < 1) {
+            ans = "Refresh Now";
+            clearInterval(setTime);
+        }
+        else if (tim < 5 && tim > 0) {
+            ans = `Refreshing in ${tim} seconds `;
+        }
+        else {
+            ans = `Time left to update :  ${tim} seconds `
+        }
+        if (ans != undefined && ans != NaN) {
+            const timeStamp = document.getElementById('lastupd').innerHTML = ans;
+        }
+    }, 1000);
+}
+
 const showData = (articles) => {
     const artitem = articles;
-    
+    showTime(articles[0].codePrevUpd);
+
     var items_list = document.getElementById('items-list');
     for (var i = 0; i < artitem.length; i++) {
         var output = "";
@@ -12,7 +39,7 @@ const showData = (articles) => {
     <a href="${artitem[i].link}" class="btn btn-warning">Set reminder</a>
        </div>
      </div>`
-     items_list.innerHTML += output;
+        items_list.innerHTML += output;
     }
 }
 const fetching = () => {
@@ -21,7 +48,7 @@ const fetching = () => {
             .then(function (resp) {
                 return resp.json();
             })
-            .then(function(data){
+            .then(function (data) {
                 showData(data)
             });
     }

@@ -3,13 +3,13 @@ const path = require('path')
 const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
-let lastUpdated = 0;
+// let lastUpdated = 0;
 
-const jcboseupd = async (res) => {
-    if (Date.now() - lastUpdated > 300000) {
-        lastUpdated = Date.now();
+const jcboseupd = function (clgPrevUpd)  {
+    // if (Date.now() - lastUpdated > 300000) {
+        // lastUpdated = Date.now();
         try {
-            await axios('https://www.jcboseust.ac.in/content/all_notices/general-notices')
+             axios('https://www.jcboseust.ac.in/content/all_notices/general-notices')
                 .then(res => {
                     const html = res.data;
                     var i = 0;
@@ -21,7 +21,7 @@ const jcboseupd = async (res) => {
                         const title = $(this).find('a').text();
                         i++;
                         if (i < 15) {
-                            articles.push({ date, title, url });
+                            articles.push({ clgPrevUpd,date, title, url });
                         }
                     });
 
@@ -35,7 +35,7 @@ const jcboseupd = async (res) => {
                 .catch(err => console.log('jcbose err 2'));
         }
         catch (err) { console.log('jcbose err3') }
-    }
-    res.sendFile(path.join(__dirname, "../public", 'jcbose.html'));
+    // }
+    // res.sendFile(path.join(__dirname, "../public", 'jcbose.html'));
 }
 module.exports = jcboseupd;
