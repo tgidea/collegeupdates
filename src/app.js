@@ -16,7 +16,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 const staticPath = path.join(__dirname, "../public");
 app.use(express.static(staticPath));
-
+app.set('view engine','ejs');
 
 const callingFun = function(){
 
@@ -45,16 +45,24 @@ const callingFun = function(){
 }
 
 callingFun();
-
+var heading="WELCOME TO OUR WEBSITE";
 app.get('/', (req, res) => {
     try {
-        res.sendFile(path.join(__dirname, "../public", 'main.html'))
+        res.status(201).render('index',{heading:heading});
+        // res.sendFile(path.join(__dirname, "../public", 'main.html'))
     }
     catch (err) {
         res.send("There is some issue. Kindly check your network connection ");
     }
 })
 
+app.get('/head7095/:heading',(req,res)=>{
+    heading=req.params.heading;
+    setTimeout(function(){
+        heading="WELCOME TO OUR WEBSITE";
+    },1800000);
+    res.send('success');
+})
 // app.use(express.static(path.join(__dirname, "../public")));
 // app.get('/jcbose', async (req, res) => {
 //     await jcboseupd(res);

@@ -1,22 +1,6 @@
 [
   {
-    "codePrevUpd": 1637659994266,
-    "day": "22",
-    "month": "Nov",
-    "name": "Starters 18",
-    "time": "08:00 PM IST",
-    "link": "https://www.codechef.com/START18?itm_medium=hpevents&itm_campaign=Start18"
-  },
-  {
-    "codePrevUpd": 1637659994266,
-    "day": "24",
-    "month": "Nov",
-    "name": "C.O.D.E.R.S",
-    "time": "08:00 PM IST",
-    "link": "https://www.codechef.com/FOUR2021?itm_medium=hpevents&itm_campaign=Coders"
-  },
-  {
-    "codePrevUpd": 1637659994266,
+    "codePrevUpd": 1637772463658,
     "day": "26",
     "month": "Nov",
     "name": "Fizzbuzz",
@@ -24,11 +8,27 @@
     "link": "https://www.codechef.com/FZBZ2021?itm_medium=hpevents&itm_campaign=FizzBuzz"
   },
   {
-    "codePrevUpd": 1637659994266,
+    "codePrevUpd": 1637772463658,
+    "day": "27",
+    "month": "Nov",
+    "name": "Beginner's Bootcamp",
+    "time": "03:00 PM IST",
+    "link": "https://www.codechef.com/bootcamp?itm_medium=hpevents&itm_campaign=CC_Bootcamp"
+  },
+  {
+    "codePrevUpd": 1637772463658,
     "day": "27",
     "month": "Nov",
     "name": "November Lunchtime",
     "time": "07:30 PM IST",
     "link": "https://www.codechef.com/LTIME102?itm_medium=hpevents&itm_campaign=NovLT"
+  },
+  {
+    "codePrevUpd": 1637772463658,
+    "day": "29",
+    "month": "Nov",
+    "name": "C.O.D.E.R.S",
+    "time": "08:00 PM IST",
+    "link": "https://www.codechef.com/FOUR2021?itm_medium=hpevents&itm_campaign=Coders"
   }
 ]
