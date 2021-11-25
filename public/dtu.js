@@ -22,6 +22,16 @@ const showTime = function (data) {
         }
     }, 1000);
 }
+const changeSize=function(size){
+    var s=size/4;
+    const p=document.getElementsByTagName('p');
+    const a=document.getElementsByClassName('btn-success');
+    // const div=document.getElementsByClassName('card-body');
+    for (var i = 0; i < p.length; i++) {
+         p[i].style.fontSize=s+"vw";
+         a[i].style.fontSize=s+"vw";
+    }
+}
 const showData = (articles) => {
     const artitem = articles;
     showTime(articles[0].clgPrevUpd);

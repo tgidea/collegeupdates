@@ -58,7 +58,7 @@
       </div>
     </nav>
     <p id="dummy"><%=heading%></p>
-    <div class="alert alert-info mt-7 text-center" id="infobox" style="margin-bottom: 25px; max-height: 80px; overflow-y:scroll" role="alert">
+    <div class="alert alert-info mt-7 text-center" id="infobox" style="margin-bottom: 25px; max-height: 25%; overflow:auto" role="alert">
       
     </div>
     
@@ -81,7 +81,6 @@
       const infobox=document.getElementById('infobox');
       const dummy=document.getElementById('dummy');
       var val=dummy.innerText;
-      val=val.replace(/[6]/g, "<br>")
       infobox.innerHTML= `${val}`;
     </script>
   </body>

@@ -45,7 +45,7 @@ const callingFun = function(){
 }
 
 callingFun();
-var heading="WELCOME TO OUR WEBSITE";
+var heading="WELCOME BACK 🎉";
 app.get('/', (req, res) => {
     try {
         res.status(201).render('index',{heading:heading});
@@ -58,9 +58,15 @@ app.get('/', (req, res) => {
 
 app.get('/head7095/:heading',(req,res)=>{
     heading=req.params.heading;
+    heading=heading.replace(/(dot)/g,".")
+    heading=heading.replace(/(slash)/g,"/")
+    heading=heading.replace(/(quest)/g,"?")
+    heading=heading.replace(/(andq)/g,"&")
+    heading=heading.replace(/(percent)/g,"%")
+    
     setTimeout(function(){
-        heading="WELCOME TO OUR WEBSITE";
-    },1800000);
+        heading="WELCOME BACK 🎉";
+    },3600000);
     res.send('success');
 })
 // app.use(express.static(path.join(__dirname, "../public")));
