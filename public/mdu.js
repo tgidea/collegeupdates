@@ -25,12 +25,10 @@ const showTime = function (data) {
 }
 const changeSize = function (size) {
     var s = size / 4;
-    const card_header = document.getElementsByClassName('card-header');
-    const  card_text = document.getElementsByClassName('card-text');
-    
-    for (var i = 0; i < card_header.length; i++) {
-        card_text[i].style.fontSize=s+"vw";        
-        card_header[i].style.fontSize = s + "vw";
+    const p = document.getElementsByTagName('p');
+
+    for (var i = 0; i < p.length; i++) {
+        p[i].style.fontSize = s + "vw";
     }
 }
 const showData = (articles) => {
@@ -42,13 +40,12 @@ const showData = (articles) => {
         var output = "";
         output += `
     <div class="card text-center border-secondary">
-     <div class="card-body ">
-     <p class="card-text text-primary card-header "><a class="mdulink" href="${artitem[i].url}">${artitem[i].title}</a></p>
-    <p class="card-text ">${artitem[i].date}</p>
-    
-       </div>
-     </div>`
-        items_list.innerHTML += output;
+        <div class="card-body ">
+            <p class="card-text text-primary card-header "><a class="mdulink" href="${artitem[i].url}">${artitem[i].title}</a></p>
+            <p class="card-text ">${artitem[i].date}</p>
+        </div>
+    </div>`
+    items_list.innerHTML += output;
     }
 }
 const fetching = () => {

@@ -29,6 +29,9 @@ const changeSize=function(size){
     // const div=document.getElementsByClassName('card-body');
     for (var i = 0; i < p.length; i++) {
          p[i].style.fontSize=s+"vw";
+         if(a[i]==undefined){
+             continue;
+         }
          a[i].style.fontSize=s+"vw";
     }
 }

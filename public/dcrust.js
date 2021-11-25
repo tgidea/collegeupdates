@@ -24,7 +24,7 @@ const showTime = function (data) {
 }
 const changeSize=function(size){
     var s=size/4;
-    const p=document.getElementsByTagName('p');
+    const p=document.getElementsByClassName('card-header');
     const a=document.getElementsByClassName('btn-info');
     // const div=document.getElementsByClassName('card-body');
     for (var i = 0; i < p.length; i++) {
@@ -40,10 +40,10 @@ const showData = (articles) => {
         var output = "";
         output += `
     <div class="card text-center border-info">
-     <div class="card-body ">
-     <p class="card-text card-header ">${artitem[i].title}</p>
-    <a href="${artitem[i].url}" class="btn btn-info">PDF</a>
-       </div>
+        <div class="card-body ">
+            <p class="card-text card-header ">${artitem[i].title}</p>
+            <a href="${artitem[i].url}" class="btn btn-info">PDF</a>
+        </div>
      </div>`
      items_list.innerHTML += output;
     }

@@ -25,10 +25,13 @@ const showTime = function (data) {
 }
 const changeSize=function(size){
     var s=size/4;
-    const p=document.getElementsByTagName('p');
+    
+    const p1=document.getElementsByClassName('card-header');
+    const p2=document.getElementsByClassName('date-text');
     const a=document.getElementsByClassName('btn-danger');
-    for (var i = 0; i < p.length; i++) {
-         p[i].style.fontSize=s+"vw";
+    for (var i = 0; i < p1.length; i++) {
+         p1[i].style.fontSize=s+"vw";
+         p2[i].style.fontSize=s+"vw";
          a[i].style.fontSize=s+"vw";
     }
 }
@@ -43,7 +46,7 @@ const showData = (articles) => {
     <div class="card text-center border-danger">
      <div class="card-body ">
      <p class="card-text card-header ">${artitem[i].title}</p>
-    <p class="card-text ">${artitem[i].date}</p>
+    <p class="card-text date-text ">${artitem[i].date}</p>
     <a href="${artitem[i].url}" class="btn btn-danger">PDF</a>
        </div>
      </div>`

@@ -16,12 +16,12 @@ const app = express();
 const port = process.env.PORT || 8000;
 const staticPath = path.join(__dirname, "../public");
 app.use(express.static(staticPath));
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 
-const callingFun = function(){
+const callingFun = function () {
 
-    let clgPrevUpd=Date.now();
-    let codePrevUpd=Date.now();
+    let clgPrevUpd = Date.now();
+    let codePrevUpd = Date.now();
     codechefupd(codePrevUpd);
     codeforcesupd(codePrevUpd);
     gjuupd(clgPrevUpd);
@@ -30,12 +30,12 @@ const callingFun = function(){
     mduupd(clgPrevUpd);
     dcrustupd(clgPrevUpd);
     const update1 = setInterval(function () {
-        codePrevUpd=Date.now();
+        codePrevUpd = Date.now();
         codechefupd(codePrevUpd);
         codeforcesupd(codePrevUpd);
     }, 180000)
     const update2 = setInterval(function () {
-        clgPrevUpd=Date.now();
+        clgPrevUpd = Date.now();
         gjuupd(clgPrevUpd);
         dtuupd(clgPrevUpd);
         jcboseupd(clgPrevUpd);
@@ -45,10 +45,13 @@ const callingFun = function(){
 }
 
 callingFun();
-var heading="WELCOME BACK 🎉";
+
+var heading = `<div class="container text-center" ><b>WELCOME BACK 🎉</b> </div>`;
+var colour = "rgb(156, 240, 240)";
+
 app.get('/', (req, res) => {
     try {
-        res.status(201).render('index',{heading:heading});
+        res.status(201).render('index', { heading: heading ,colour:colour});
         // res.sendFile(path.join(__dirname, "../public", 'main.html'))
     }
     catch (err) {
@@ -56,18 +59,25 @@ app.get('/', (req, res) => {
     }
 })
 
-app.get('/head7095/:heading',(req,res)=>{
-    heading=req.params.heading;
-    heading=heading.replace(/(dot)/g,".")
-    heading=heading.replace(/(slash)/g,"/")
-    heading=heading.replace(/(quest)/g,"?")
-    heading=heading.replace(/(andq)/g,"&")
-    heading=heading.replace(/(percent)/g,"%")
-    
-    setTimeout(function(){
-        heading="WELCOME BACK 🎉";
-    },3600000);
-    res.send('success');
+app.get('/head7095/:heading/:colour', async (req, res) => {
+    try {
+        heading = req.params.heading;
+        colour=req.params.colour;
+        heading = heading.replace(/(dot)/g, ".")
+        heading = heading.replace(/(slash)/g, "/")
+        heading = heading.replace(/(quest)/g, "?")
+        heading = heading.replace(/(andq)/g, "&")
+        heading = heading.replace(/(percent)/g, "%")
+
+        setTimeout(function () {
+            heading = `<div class="container text-center"><b>WELCOME BACK 🎉</b> </div>`;
+            colour = "rgb(156, 240, 240)";
+        }, 3600000);
+        res.send('success');
+    }
+    catch(err){
+        res.send(err);
+    }
 })
 // app.use(express.static(path.join(__dirname, "../public")));
 // app.get('/jcbose', async (req, res) => {

@@ -24,9 +24,8 @@ const showTime = function (data) {
 }
 const changeSize=function(size){
     var s=size/4;
-    const p=document.getElementsByTagName('p');
+    const p=document.getElementsByClassName('card-header');
     const a=document.getElementsByClassName('btn-pink');
-    // const div=document.getElementsByClassName('card-body');
     for (var i = 0; i < p.length; i++) {
          p[i].style.fontSize=s+"vw";
          a[i].style.fontSize=s+"vw";
@@ -41,12 +40,11 @@ const showData = (articles) => {
         var output = "";
         output += `
     <div class="card text-center " style="border-color:pink;">
-     <div class="card-body ">
-     <p class="card-text  card-header ">${artitem[i].title}</p>
-     <a class="btn-pink " style="color:white; text-decoration:none;" href="${artitem[i].url}">PDF</a>
-    
-       </div>
-     </div>`
+        <div class="card-body ">
+            <p class="card-text  card-header ">${artitem[i].title}</p>
+            <a class="btn-pink " style="color:white; text-decoration:none;" href="${artitem[i].url}">PDF</a>
+        </div>
+    </div>`
      items_list.innerHTML += output;
     }
 }
