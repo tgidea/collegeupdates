@@ -59,7 +59,7 @@ app.get('/', (req, res) => {
     }
 })
 
-app.get('/head7095/:heading/:colour', async (req, res) => {
+app.get('/head01/:heading/:colour', (req, res) => {
     try {
         heading = req.params.heading;
         colour=req.params.colour;
