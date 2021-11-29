@@ -7,43 +7,45 @@ const fs = require('fs');
 
 const dcrustupd = function (clgPrevUpd) {
     // if (Date.now() - lastUpdated > 300000) {
-        // lastUpdated = Date.now();
-        try {
-            var i = 0;
-            axios('http://www.dcrustm.ac.in/')
-                .then(res => {
-                    const html = res.data;
-                    const $ = cheerio.load(html);
-                    // console.log(html);
-                    const articles = [];
-                    var wpbcount = 0;
-                    $('.wpb_wrapper', html)
-                        .each(function () {
-                            wpbcount++;
-                            if (wpbcount > 5) {
-                                $(this).find('a').each(function () {
-                                    i++;
-                                    const url = $(this).attr('href');
-                                    const title = $(this).text();
-                                    if (i < 25) {
-                                        articles.push({clgPrevUpd, title, url });
+    // lastUpdated = Date.now();
+    try {
+        var i = 0;
+        axios('http://www.dcrustm.ac.in/')
+            .then(res => {
+                const html = res.data;
+                const $ = cheerio.load(html);
+                // console.log(html);
+                const articles = [];
+                var wpbcount = 0;
+                $('.wpb_wrapper', html)
+                    .each(function () {
+                        wpbcount++;
+                        if (wpbcount > 5) {
+                            $(this).find('a').each(function () {
+                                i++;
+                                const url = $(this).attr('href');
+                                const title = $(this).text();
+                                if (i < 35) {
+                                    if (url != undefined) {
+                                        articles.push({ clgPrevUpd, title, url });
                                     }
-                                })
-                            }
-                        });
-                    // console.log(articles);
-                    fs.writeFile(path.join(__dirname, '../public/', 'dcrust.json'), JSON.stringify(articles, null, 2), (err) => {
-                        if (err) {
-                            console.log('some error occur 1');
+                                }
+                            })
                         }
-                        // console.log("successfully written")
-                    })
+                    });
+                // console.log(articles);
+                fs.writeFile(path.join(__dirname, '../public/', 'dcrust.json'), JSON.stringify(articles, null, 2), (err) => {
+                    if (err) {
+                        console.log('some error occur 1');
+                    }
+                    // console.log("successfully written")
                 })
-                .catch(err => console.log('some error occur 2'))
-        }
-        catch (err) {
-            console.log('error occur3')
-        }
+            })
+            .catch(err => console.log('some error occur 2'))
+    }
+    catch (err) {
+        console.log('error occur3')
+    }
     // }
     // res.sendFile(path.join(__dirname, "../public", 'dcrust.html'));
 }
