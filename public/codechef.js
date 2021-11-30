@@ -26,20 +26,27 @@ const showTime = function (data) {
 
 const showData = (articles) => {
     const artitem = articles;
-    showTime(articles[0].codePrevUpd);
-
     var items_list = document.getElementById('items-list');
-    for (var i = 0; i < artitem.length; i++) {
-        var output = "";
-        output += `
+    if (artitem.length > 0) {
+        showTime(articles[0].codePrevUpd);
+
+        for (var i = 0; i < artitem.length; i++) {
+            var output = "";
+            output += `
     <div class="card text-center border-warning">
      <div class="card-body ">
      <p class="card-text text-warning font-weight-bold card-header ">${artitem[i].name}</p>
-     <p class="card-text card-header ">${artitem[i].day} ${artitem[i].month} ${artitem[i].time}</p>
+     <p class="card-text card-header ">${artitem[i].day} ${artitem[i].month} ${artitem[i].time}  <sup>IST</sup></p>
     <a href="${artitem[i].link}" class="btn btn-warning">Set reminder</a>
        </div>
      </div>`
-        items_list.innerHTML += output;
+            items_list.innerHTML += output;
+        }
+    }
+    else {
+        items_list.innerHTML = `
+        <div class="container text-center"><h5>No eventes are scheduled for now</h5></div>
+        `
     }
 }
 const fetching = () => {

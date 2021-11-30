@@ -8,6 +8,7 @@ const dcrustupd = require('./dcrust');
 const dtuupd = require('./dtu');
 const mduupd = require('./mdu');
 const gjuupd = require('./gju');
+const atcoderupd=require('./atcoder');
 const codechefupd = require('./codechef');
 const codeforcesupd = require('./codeforces');
 
@@ -22,6 +23,7 @@ const callingFun = function () {
 
     let clgPrevUpd = Date.now();
     let codePrevUpd = Date.now();
+    atcoderupd(codePrevUpd);
     codechefupd(codePrevUpd);
     codeforcesupd(codePrevUpd);
     gjuupd(clgPrevUpd);
@@ -31,6 +33,7 @@ const callingFun = function () {
     dcrustupd(clgPrevUpd);
     const update1 = setInterval(function () {
         codePrevUpd = Date.now();
+        atcoderupd(codePrevUpd);
         codechefupd(codePrevUpd);
         codeforcesupd(codePrevUpd);
     }, 180000)
@@ -108,7 +111,7 @@ app.get('/head01/:heading/:colour', (req, res) => {
 
 // app.get('/codeforces', (req, res) => {
 //     codeforcesupd(res);  
-// })
+// })/
 
 app.get('*', (req, res) => {
     res.send('<h1>Error:404</h1><br><h3>Page not found</h3>');

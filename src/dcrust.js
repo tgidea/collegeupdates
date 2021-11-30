@@ -41,10 +41,10 @@ const dcrustupd = function (clgPrevUpd) {
                     // console.log("successfully written")
                 })
             })
-            .catch(err => console.log('some error occur 2'))
+            .catch(err => console.log('dcrust error occur 2'))
     }
     catch (err) {
-        console.log('error occur3')
+        console.log('dcurst error occur3')
     }
     // }
     // res.sendFile(path.join(__dirname, "../public", 'dcrust.html'));

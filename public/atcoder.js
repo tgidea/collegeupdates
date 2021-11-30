@@ -24,33 +24,59 @@ const showTime = function (data) {
 }
 
 const changeTime = function (str) {
-    var num = "", num2 = "", carry = 0, actual = "", i;
+    var num1 = "", num2 = "", date = "", carry = 0, actual = "", i, j;
     const len = str.length;
-    for (i = len - 1; i > len - 5; i--) {
-        if (str[i] == ':') {
-            for (var j = i - 1; j >= i - 2; j--) {
-                num2 += str[j];
-            }
-            break;
-        }
-        else {
-            num += str[i];
-        }
+    for (i = 0; i < 8; i++) {
+        actual += str[i];
     }
-    var minute = parseInt(num.split('').reverse().join(''));
-    var hour = parseInt(num2.split('').reverse().join(''));
-    minute += 30;
-    if (minute > 60) {
-        minute = minute - 60;
-        hour += 3;
+    // console.log(actual);
+    for (d = i; d < 11; d++) {
+        date += str[d];
+    }
+    console.log('date', date);
+    for (j = d; j < d + 2; j++) {
+        num1 += str[j];
+    }
+    // console.log('num1',num1);
+    for (k = j + 1; k < j + 3; k++) {
+        num2 += str[k];
+    }
+    // console.log('num2',num2);
+
+    var hour = parseInt(num1);
+    var minute = parseInt(num2);
+
+    if (hour >= 0 && hour <= 3) {
+        date = date - 1;
+    }
+    console.log(minute);
+    minute = minute - 30;
+    console.log(minute);
+    if (minute <= 0) {
+        carry = 1;
+        minute = Math.abs(minute)
+    }
+    // console.log('min',minute);
+
+    if (carry == 1) {
+        hour = 20 + hour;
+        console.log('carry 1 hour:', hour);
     }
     else {
-        hour += 2;
+        hour = 21 + hour;
+        console.log('carry 0 hour:', hour);
     }
-    for (var j = 0; j < i - 2; j++) {
-        actual += str[j];
+    if (hour >= 24) {
+        hour = hour - 24;
     }
-    actual += " " + hour + ":" + minute;
+    console.log('final hour:', hour);
+    if (hour != NaN && minute != NaN && hour != undefined && minute != undefined) {
+        actual += date + " " + hour + ":" + minute + `<sup>IST</sup>`;
+    }
+    if (actual.indexOf(NaN) != -1) {
+        actual = "Timing Not available.";
+    }
+    console.log(actual);
     return actual;
 }
 
@@ -59,31 +85,29 @@ const showData = (articles) => {
     var items_list = document.getElementById('items-list');
     if (artitem.length > 0) {
         showTime(articles[0].codePrevUpd);
-
         for (var i = 0; i < artitem.length; i++) {
             var time = changeTime(artitem[i].time.toString());
             var output = "";
             output += `
-    <div class="card text-center border-primary">
+    <div class="card text-center border-color">
      <div class="card-body ">
-     <p class="card-text font-weight-bold text-primary card-header ">${artitem[i].name}</p>
-     <p class="card-text card-header ">Duration : ${artitem[i].duration}</p>
-     <p class="card-text card-header "> ${artitem[i].toStart}</p>
-     <p class="card-text card-header "><a href="${artitem[i].link}" class="btn btn-primary">${time}  <sup>IST</sup></a></p>
+     <p class="card-text font-weight-bold color card-header ">${artitem[i].name}</p>
+     <p class="card-text card-header "><a href="${artitem[i].timeLink}" class="btn ">${time} </a></p>
+     <a href="${artitem[i].nameLink}" class="btn btn-color text-white">Contest Page</a>
        </div>
      </div>`
             items_list.innerHTML += output;
         }
     }
-    else{
-        items_list.innerHTML += `
+    else {
+        items_list.innerHTML = `
         <div class="container text-center"><h5>No eventes are scheduled for now</h5></div>
         `
     }
 }
 const fetching = () => {
     try {
-        fetch("codeforces.json")
+        fetch("atcoder.json")
             .then(function (resp) {
                 return resp.json();
             })

@@ -57,14 +57,14 @@ const codeforcesupd = function (codePrevUpd) {
                     })
                     fs.writeFile(path.join(__dirname, '../public/', 'codeforces.json'), JSON.stringify(articles, null, 2), (err) => {
                         if (err) {
-                            console.log('codechef err 1');
+                            console.log('codeforces err 1');
                         }
                         // console.log("successfully written")
                     })
                 })
                 .catch(err => console.log(err));
         }
-        catch (err) { console.log('codechef err3') }
+        catch (err) { console.log('codeforces err3') }
     // }
     // resp.sendFile(path.join(__dirname, "../public", 'codeforces.html'));
 
