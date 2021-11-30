@@ -1,70 +1,95 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <style>
-        .pink{
-            color: rgb(247, 51, 198);
-        }
-        .btn-pink{
-            background-color: rgb(247, 51, 198);
-            columns: rgb(247, 51, 198);
-        }
-    </style>
-    <title>MyCollege/gju</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 25px;">
-      <div class="container-fluid">
-        <a class="navbar-brand font-weight-bold" href="#">My<span class="text-warning">UPDATES</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Updates
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item " href="./dcrust.html">DCRUST</a></li>
-                <li><a class="dropdown-item" href="./dtu.html">DTU</a></li>
-                <li><a class="dropdown-item active" href="#">GJU</a></li>
-                <li><a class="dropdown-item" href="./jcbose.html">JCBOSE</a></li>
-                <li><a class="dropdown-item" href="./mdu.html">MDU</a></li>
-                <li><a class="dropdown-item" href="./atcoder.html">AtCoder</a></li>
-                <li><a class="dropdown-item " href="./codechef.html">CODECHEF</a></li>
-                <li><a class="dropdown-item " href="./codeforces.html">CODEFORCES</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="mailto: gyanexplode@gmail.com">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="container mb-4">
-        <a href="http://www.gjust.ac.in/" style="text-decoration: none;"><h1 class="display-8 text-center"><span class="pink">Gju University Updates</span></h1></a>
-        <p id="lastupd" style="font-size: 15px;" class="text-center"></p>
-    </div>
-    <div class="container text-center">
-      <input type="range" name="textSize" id="textChanger" value="10" min="1" max="20" oninput="changeSize(this.value)">
-    </div>
-    <div class="container " id="items-list">
-       
-    </div>
 
-    
-    <script src="gju.js">
-        
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-  </body>
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5TBCM99');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <style>
+    .pink {
+      color: rgb(247, 51, 198);
+    }
+
+    .btn-pink {
+      background-color: rgb(247, 51, 198);
+      columns: rgb(247, 51, 198);
+    }
+  </style>
+  <title>MyCollege/gju</title>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TBCM99"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 25px;">
+    <div class="container-fluid">
+      <a class="navbar-brand font-weight-bold" href="#">My<span class="text-warning">UPDATES</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Updates
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item " href="./dcrust.html">DCRUST</a></li>
+              <li><a class="dropdown-item" href="./dtu.html">DTU</a></li>
+              <li><a class="dropdown-item active" href="#">GJU</a></li>
+              <li><a class="dropdown-item" href="./jcbose.html">JCBOSE</a></li>
+              <li><a class="dropdown-item" href="./mdu.html">MDU</a></li>
+              <li><a class="dropdown-item" href="./atcoder.html">AtCoder</a></li>
+              <li><a class="dropdown-item " href="./codechef.html">CODECHEF</a></li>
+              <li><a class="dropdown-item " href="./codeforces.html">CODEFORCES</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mailto: gyanexplode@gmail.com">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mb-4">
+    <a href="http://www.gjust.ac.in/" style="text-decoration: none;">
+      <h1 class="display-8 text-center"><span class="pink">Gju University Updates</span></h1>
+    </a>
+    <p id="lastupd" style="font-size: 15px;" class="text-center"></p>
+  </div>
+  <div class="container text-center">
+    <input type="range" name="textSize" id="textChanger" value="10" min="1" max="20" oninput="changeSize(this.value)">
+  </div>
+  <div class="container " id="items-list">
+
+  </div>
+
+
+  <script src="gju.js">
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
