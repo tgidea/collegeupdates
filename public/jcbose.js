@@ -45,7 +45,7 @@ const showData = (articles) => {
         output += `
     <div class="card text-center border-danger">
      <div class="card-body ">
-     <p class="card-text card-header ">${artitem[i].title}</p>
+     <p class="card-text card-header text-danger">${artitem[i].title}</p>
     <p class="card-text date-text ">${artitem[i].date}</p>
     <a href="${artitem[i].url}" class="btn btn-danger">PDF</a>
        </div>

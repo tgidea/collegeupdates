@@ -1,10 +1,18 @@
 [
   {
-    "codePrevUpd": 1638284401052,
+    "codePrevUpd": 1638361612722,
     "day": "03",
     "month": "Dec",
     "name": "December Long Challenge",
     "time": "03:00 PM IST",
     "link": "https://www.codechef.com/DEC21?itm_medium=hpevents&itm_campaign=DecLC"
+  },
+  {
+    "codePrevUpd": 1638361612722,
+    "day": "06",
+    "month": "Dec",
+    "name": "Intermediate BootCamp",
+    "time": "07:00 PM IST",
+    "link": "https://www.codechef.com/bootcamp/intermediate/yogesh-yogendra/register?itm_medium=hpevents&itm_campaign=CC_Bootcamp_2"
   }
 ]

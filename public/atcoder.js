@@ -33,15 +33,12 @@ const changeTime = function (str) {
     for (d = i; d < 11; d++) {
         date += str[d];
     }
-    console.log('date', date);
     for (j = d; j < d + 2; j++) {
         num1 += str[j];
     }
-    // console.log('num1',num1);
     for (k = j + 1; k < j + 3; k++) {
         num2 += str[k];
     }
-    // console.log('num2',num2);
 
     var hour = parseInt(num1);
     var minute = parseInt(num2);
@@ -49,34 +46,34 @@ const changeTime = function (str) {
     if (hour >= 0 && hour <= 3) {
         date = date - 1;
     }
-    console.log(minute);
+    
     minute = minute - 30;
-    console.log(minute);
+    
     if (minute <= 0) {
         carry = 1;
         minute = Math.abs(minute)
     }
-    // console.log('min',minute);
+    
 
     if (carry == 1) {
         hour = 20 + hour;
-        console.log('carry 1 hour:', hour);
+        
     }
     else {
         hour = 21 + hour;
-        console.log('carry 0 hour:', hour);
+        
     }
     if (hour >= 24) {
         hour = hour - 24;
     }
-    console.log('final hour:', hour);
+    
     if (hour != NaN && minute != NaN && hour != undefined && minute != undefined) {
         actual += date + " " + hour + ":" + minute + `<sup>IST</sup>`;
     }
     if (actual.indexOf(NaN) != -1) {
         actual = "Timing Not available.";
     }
-    console.log(actual);
+    
     return actual;
 }
 
