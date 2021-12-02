@@ -75,5 +75,5 @@ const fetching = () => {
         console.log(err);
     }
 }
-document.addEventListener('DOMCONTENTLOADED', fetching());
-// fetch();
+// document.addEventListener('DOMCONTENTLOADED', fetching());
+fetching();
