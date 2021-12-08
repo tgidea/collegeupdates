@@ -7,7 +7,6 @@ const fs = require('fs');
 const codechefupd = function (codePrevUpd) {
     // if (Date.now() - lastUpdated > 300000) {
         // lastUpdated=Date.now();
-        console.log('active')
         try {
             axios('https://www.codechef.com/')
                 .then(res => {

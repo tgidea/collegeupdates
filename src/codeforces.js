@@ -9,7 +9,7 @@ const { data } = require('cheerio/lib/api/attributes');
 const codeforcesupd = function (codePrevUpd) {
     // if (Date.now() - lastUpdated > 600000) {
         // lastUpdated = Date.now();
-        console.log('active');
+
         try {
             axios('https://codeforces.com/contests')
                 .then(res => {

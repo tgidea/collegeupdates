@@ -1,6 +1,6 @@
 [
   {
-    "codePrevUpd": 1638364806905,
+    "codePrevUpd": 1638979303110,
     "day": "03",
     "month": "Dec",
     "name": "December Long Challenge",
@@ -8,11 +8,19 @@
     "link": "https://www.codechef.com/DEC21?itm_medium=hpevents&itm_campaign=DecLC"
   },
   {
-    "codePrevUpd": 1638364806905,
-    "day": "06",
+    "codePrevUpd": 1638979303110,
+    "day": "11",
     "month": "Dec",
-    "name": "Intermediate BootCamp",
-    "time": "07:00 PM IST",
-    "link": "https://www.codechef.com/bootcamp/intermediate/yogesh-yogendra/register?itm_medium=hpevents&itm_campaign=CC_Bootcamp_2"
+    "name": "Beginner's 2-Day Bootcamp",
+    "time": "03:00 PM IST",
+    "link": "https://www.codechef.com/bootcamp/beginner-02/Chitrank-Mishra/register?itm_medium=hpevents&itm_campaign=BeginnersBootcamp02"
+  },
+  {
+    "codePrevUpd": 1638979303110,
+    "day": "11",
+    "month": "Dec",
+    "name": "Starters 19",
+    "time": "08:00 PM IST",
+    "link": "https://www.codechef.com/START19?itm_medium=hpevents&itm_campaign=Start19"
   }
 ]
