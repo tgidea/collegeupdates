@@ -12,12 +12,16 @@ const atcoderupd = require('./atcoder');
 const codechefupd = require('./codechef');
 const codeforcesupd = require('./codeforces');
 
+const { clear } = require('console');
+
 const app = express();
 
 const port = process.env.PORT || 8000;
 const staticPath = path.join(__dirname, "../public");
 app.use(express.static(staticPath));
 app.set('view engine', 'ejs');
+
+
 
 const callingFun = function () {
 
@@ -55,12 +59,14 @@ var result = "";
 app.get('/', (req, res) => {
     try {
         res.status(201).render('index', { heading: heading, colour: colour, result: result });
-        // res.sendFile(path.join(__dirname, "../public", 'main.html'))
     }
     catch (err) {
         res.send("There is some issue. Kindly check your network connection ");
     }
 })
+
+//******* */ Form data view-clear-add **************
+
 app.use(express.urlencoded({ extended: false }));
 app.post('/submit/', async (req, res) => {
     try {
@@ -124,6 +130,9 @@ app.get('/clearusermessage01/',(req,res)=>{
         }
     })
 })
+
+
+//*********** */ To change main head*************
 
 app.get('/head01/:heading/:colour', (req, res) => {
     try {

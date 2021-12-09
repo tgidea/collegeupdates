@@ -1,0 +1,8 @@
+<div class="card text-center border-info">
+                            <div class="card-body ">
+                                <p class="card-text">Tushar</p>
+                                <p class="card-text">Heloo</p>
+                                <a href="mailto:tushargoyal85709@gmail.com">tushargoyal85709@gmail.com</a>
+                            </div>
+                     </div>
+                     <br>

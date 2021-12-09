@@ -43,13 +43,13 @@ const changeTime = function (str) {
     var hour = parseInt(num1);
     var minute = parseInt(num2);
 
-    if (hour >= 0 && hour <= 3) {
+    if (hour >= 0 && hour <= 3 && minute<30) {
         date = date - 1;
     }
     
     minute = minute - 30;
     
-    if (minute <= 0) {
+    if (minute < 0) {
         carry = 1;
         minute = Math.abs(minute)
     }
@@ -57,7 +57,6 @@ const changeTime = function (str) {
 
     if (carry == 1) {
         hour = 20 + hour;
-        
     }
     else {
         hour = 21 + hour;
