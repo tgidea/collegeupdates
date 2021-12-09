@@ -72,9 +72,10 @@ app.post('/submit/', async (req, res) => {
                             <div class="card-body ">
                                 <p class="card-text">${name}</p>
                                 <p class="card-text">${message}</p>
-                                <a href="mailto:${email}">${email}</p>
+                                <a href="mailto:${email}">${email}</a>
                             </div>
-                     </div><br>`
+                     </div>
+                     <br>`
 
         const write = async () => {
             try {
@@ -110,7 +111,7 @@ app.get('/clearusermessage01/',(req,res)=>{
                             <div class="card-body ">
                                 <p class="card-text">Tushar</p>
                                 <p class="card-text">everything well</p>
-                                <a href="#">email</p>
+                                <a href="#">email</a>
                             </div>
                      </div><br>`
 
