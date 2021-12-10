@@ -51,7 +51,7 @@ const callingFun = function () {
     }, 300000)
 }
 
-// callingFun();
+callingFun();
 
 var heading = `<div class="container text-center" ><b>WELCOME BACK 🎉</b> </div>`;
 var colour = "rgb(156, 240, 240)";
