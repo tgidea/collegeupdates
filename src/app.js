@@ -22,7 +22,6 @@ app.use(express.static(staticPath));
 app.set('view engine', 'ejs');
 
 
-
 const callingFun = function () {
 
     let clgPrevUpd = Date.now();
