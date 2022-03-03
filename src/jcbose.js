@@ -27,14 +27,14 @@ const jcboseupd = function (clgPrevUpd) {
 
                 fs.writeFile(path.join(__dirname, '../public/', 'jcbose.json'), JSON.stringify(articles, null, 2), (err) => {
                     if (err) {
-                        console.log('jcbose err 1');
+                        console.log(err);
                     }
                     // console.log("successfully written")
                 })
             })
-            .catch(err => console.log('jcbose err 2'));
+            .catch(err => console.log(err));
     }
-    catch (err) { console.log('jcbose err3') }
+    catch (err) { console.log(err) };
     // }
     // res.sendFile(path.join(__dirname, "../public", 'jcbose.html'));
 }

@@ -1,26 +1,18 @@
 [
   {
-    "codePrevUpd": 1638979303110,
-    "day": "03",
-    "month": "Dec",
-    "name": "December Long Challenge",
-    "time": "03:00 PM IST",
-    "link": "https://www.codechef.com/DEC21?itm_medium=hpevents&itm_campaign=DecLC"
-  },
-  {
-    "codePrevUpd": 1638979303110,
-    "day": "11",
-    "month": "Dec",
-    "name": "Beginner's 2-Day Bootcamp",
-    "time": "03:00 PM IST",
-    "link": "https://www.codechef.com/bootcamp/beginner-02/Chitrank-Mishra/register?itm_medium=hpevents&itm_campaign=BeginnersBootcamp02"
-  },
-  {
-    "codePrevUpd": 1638979303110,
-    "day": "11",
-    "month": "Dec",
-    "name": "Starters 19",
+    "codePrevUpd": 1646300642959,
+    "day": "05",
+    "month": "Mar",
+    "name": "March Cook-Off",
     "time": "08:00 PM IST",
-    "link": "https://www.codechef.com/START19?itm_medium=hpevents&itm_campaign=Start19"
+    "link": "https://www.codechef.com/COOK139?itm_medium=hpevents&itm_campaign=COOK139"
+  },
+  {
+    "codePrevUpd": 1646300642959,
+    "day": "09",
+    "month": "Mar",
+    "name": "Starters 29",
+    "time": "08:00 PM IST",
+    "link": "https://www.codechef.com/START29?itm_medium=hpevents&itm_campaign=START29"
   }
 ]
