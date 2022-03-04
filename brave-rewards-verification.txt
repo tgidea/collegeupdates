@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: mycollegeupdates.herokuapp.com
+Token: 2d5014a4f3d3b1be37346a274eee6e3cf88200bfebb917efb448c0b9ab8934b3
