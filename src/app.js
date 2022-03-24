@@ -42,12 +42,11 @@ const callingFun = function () {
     }, 180000)
     const update2 = setInterval(function () {
         clgPrevUpd = Date.now();
-        gjuupd(clgPrevUpd);
+        // gjuupd(clgPrevUpd);
         dtuupd(clgPrevUpd);
-        jcboseupd(clgPrevUpd);
         mduupd(clgPrevUpd);
         dcrustupd(clgPrevUpd);
-    }, 300000)
+    }, 900000)
 }
 
 callingFun();

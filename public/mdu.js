@@ -2,7 +2,7 @@
 const showTime = function (data) {
 
     const setTime = setInterval(function () {
-        const tim = 300 - Math.ceil((Date.now() - data) / 1000);
+        const tim = 900 - Math.ceil((Date.now() - data) / 1000);
         var ans;
         if (tim == NaN || tim == undefined) {
             ans = "";

@@ -40,12 +40,12 @@ const gjuupd = function (clgPrevUpd) {
                 // console.log(articles);
                 fs.writeFile(path.join(__dirname, '../public/', 'gju.json'), JSON.stringify(articles, null, 2), (err) => {
                     if (err) {
-                        console.log('some error occur 1');
+                        console.log('some error occur gju');
                     }
                     // console.log("successfully written")
                 })
             })
-            .catch(err => console.log('some error occur 2'))
+            .catch(err => console.log('error occur in gju'))
     }
     catch (err) {
         console.log('error occur3')
