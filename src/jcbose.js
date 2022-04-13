@@ -20,11 +20,12 @@ const jcboseupd = function (clgPrevUpd) {
                     const url = $(this).find('a').attr('href');
                     const title = $(this).find('a').text();
                     i++;
-                    if (i < 25) {
-                        articles.push({ clgPrevUpd, date, title, url });
-                    }
-                });
+                    console.log(date);
 
+                    articles.push({ clgPrevUpd, date, title, url });
+
+                });
+                console.log(articles.length);
                 fs.writeFile(path.join(__dirname, '../public/', 'jcbose.json'), JSON.stringify(articles, null, 2), (err) => {
                     if (err) {
                         console.log(err);
