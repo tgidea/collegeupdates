@@ -8,9 +8,7 @@ const fs = require('fs');
 const jcboseupd = async (clgPrevUpd) =>{
     console.log('in jcboseupd');
     // try {
-        const data2=await axios('https://www.jcboseust.ac.in/content/all_notices/general-notices');
-        
-        
+        const data2=await axios('https://www.jcboseust.ac.in');
         console.log('hereee axios complete in ');
 
         axios('https://www.jcboseust.ac.in/content/all_notices/general-notices')
