@@ -7,9 +7,7 @@ const fs = require('fs');
 
 const jcboseupd = async (clgPrevUpd) =>{
     console.log('in jcboseupd');
-    // try {
-        const data2=await axios('https://www.jcboseust.ac.in');
-        console.log('hereee axios complete in ');
+    try {
 
         axios('https://www.jcboseust.ac.in/content/all_notices/general-notices')
             .then(res => {
@@ -39,9 +37,9 @@ const jcboseupd = async (clgPrevUpd) =>{
                 })
             })
             .catch(err => console.log(err));
-    // }
-    // catch (err) { console.log(err) };
-    // }
-    // res.sendFile(path.join(__dirname, "../public", 'jcbose.html'));
+    }
+    catch (err) { console.log(err) };
+    
+    
 }
 module.exports = jcboseupd;
