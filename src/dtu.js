@@ -34,7 +34,7 @@ const dtuupd = function (clgPrevUpd) {
                                 }
                             }
                             i++;
-                            if (i < 50) {
+                            if (i < 70) {
                                 if (title != undefined) {
                                     articles.push({ clgPrevUpd, title, finalurl });
                                 }

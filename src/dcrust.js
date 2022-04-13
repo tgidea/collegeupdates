@@ -3,11 +3,8 @@ const path = require('path')
 const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
-// let lastUpdated = 0;
 
 const dcrustupd = function (clgPrevUpd) {
-    // if (Date.now() - lastUpdated > 300000) {
-    // lastUpdated = Date.now();
     try {
         var i = 0;
         axios('http://www.dcrustm.ac.in/')
@@ -24,9 +21,9 @@ const dcrustupd = function (clgPrevUpd) {
                             $(this).find('a').each(function () {
                                 i++;
                                 const url = $(this).attr('href');
-                                const title = $(this).text();
-                                if (i < 35) {
-                                    if (url != undefined) {
+                                let title = $(this).text();
+                                if (i < 50) {
+                                    if (url != undefined && title.toString().trim().length>0) {                                        
                                         articles.push({ clgPrevUpd, title, url });
                                     }
                                 }

@@ -5,16 +5,21 @@ const axios = require('axios');
 const fs = require('fs');
 // let lastUpdated = 0;
 
-const jcboseupd = function (clgPrevUpd) {
+const jcboseupd = async (clgPrevUpd) =>{
     console.log('in jcboseupd');
-    // if (Date.now() - lastUpdated > 300000) {
-    // lastUpdated = Date.now();
     try {
+        const data2=await axios('https://www.jcboseust.ac.in/content/all_notices/general-notices');
+        
+        const html2=data2.data;
+        console.log('hereee axios complete in ');
+
+
         axios('https://www.jcboseust.ac.in/content/all_notices/general-notices')
             .then(res => {
                 const html = res.data;
                 var i = 0;
                 const $ = cheerio.load(html);
+                console.log($);
                 const articles = [];
                 console.log('inside fun');
                 $('.views-row', html).each(function () {
