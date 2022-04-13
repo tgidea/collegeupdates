@@ -7,15 +7,15 @@ const fs = require('fs');
 
 const jcboseupd = async (clgPrevUpd) =>{
     console.log('in jcboseupd');
-    try {
+    // try {
         const data2=await axios('https://www.jcboseust.ac.in/content/all_notices/general-notices');
         
-        const html2=data2.data;
+        
         console.log('hereee axios complete in ');
-
 
         axios('https://www.jcboseust.ac.in/content/all_notices/general-notices')
             .then(res => {
+                console.log('in axios')
                 const html = res.data;
                 var i = 0;
                 const $ = cheerio.load(html);
@@ -41,8 +41,8 @@ const jcboseupd = async (clgPrevUpd) =>{
                 })
             })
             .catch(err => console.log(err));
-    }
-    catch (err) { console.log(err) };
+    // }
+    // catch (err) { console.log(err) };
     // }
     // res.sendFile(path.join(__dirname, "../public", 'jcbose.html'));
 }

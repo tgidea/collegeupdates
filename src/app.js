@@ -29,7 +29,7 @@ const callingFun = function () {
     atcoderupd(codePrevUpd);
     codechefupd(codePrevUpd);
     codeforcesupd(codePrevUpd);
-    gjuupd(clgPrevUpd);
+    // gjuupd(clgPrevUpd);
     dtuupd(clgPrevUpd);
     jcboseupd(clgPrevUpd);
     mduupd(clgPrevUpd);
