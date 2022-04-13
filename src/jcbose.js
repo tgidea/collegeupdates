@@ -6,6 +6,7 @@ const fs = require('fs');
 // let lastUpdated = 0;
 
 const jcboseupd = function (clgPrevUpd) {
+    console.log('in jcboseupd');
     // if (Date.now() - lastUpdated > 300000) {
     // lastUpdated = Date.now();
     try {
@@ -15,6 +16,7 @@ const jcboseupd = function (clgPrevUpd) {
                 var i = 0;
                 const $ = cheerio.load(html);
                 const articles = [];
+                console.log('inside fun');
                 $('.views-row', html).each(function () {
                     const date = $(this).find('p').text();
                     const url = $(this).find('a').attr('href');
