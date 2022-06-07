@@ -1,5 +1,5 @@
 const showTime = function (data) {
-
+    console.log(data);
     const setTime = setInterval(function () {
         const tim = 180 - Math.ceil((Date.now() - data) / 1000);
         var ans;
@@ -56,6 +56,7 @@ const changeTime = function (str) {
 
 const showData = (articles) => {
     const artitem = articles;
+    console.log(artitem)
     var items_list = document.getElementById('items-list');
     if (artitem.length > 0) {
         showTime(articles[0].codePrevUpd);
