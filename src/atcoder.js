@@ -19,20 +19,20 @@ const atcoderupd = function (codePrevUpd) {
                 let name, time, timeLink, nameLink;
                 $('#contest-table-active', html).each(function () {
                     let j = 0;
-                    $(this).find('td').each(function () {                    
-                        const a = $(this).find('a');                        
+                    $(this).find('td').each(function () {
+                        const a = $(this).find('a');
                         if (j == 0) {
                             timeLink = a.attr('href');
                             time = a.text();
                         }
                         if (j == 1) {
                             name = a.text();
-                            nameLink = 'https://atcoder.jp'+a.attr('href');
+                            nameLink = 'https://atcoder.jp' + a.attr('href');
                         }
                         j++;
                     })
                     if (name != undefined) {
-                        articles.push({codePrevUpd, name, nameLink, time, timeLink });
+                        articles.push({ codePrevUpd, name, nameLink, time, timeLink });
                     }
                 })
                 $('#contest-table-upcoming', html).each(function () {
@@ -41,28 +41,29 @@ const atcoderupd = function (codePrevUpd) {
                         $(this).find('td').each(function () {
                             var b = $(this).find('a');
                             if (i == 0) {
-                                timeLink = b.attr('href');                                
+                                timeLink = b.attr('href');
                                 time = b.text();
                             }
                             if (i == 1) {
                                 name = b.text();
-                                nameLink ='https://atcoder.jp'+b.attr('href');
+                                nameLink = 'https://atcoder.jp' + b.attr('href');
                             }
                             i++;
                         })
                         if (name != undefined) {
-                            articles.push({codePrevUpd, name, nameLink, time, timeLink });
+                            articles.push({ codePrevUpd, name, nameLink, time, timeLink });
                         }
                     })
                 })
                 // console.log(articles);
-
-                fs.writeFile(path.join(__dirname, '../public/', 'atcoder.json'), JSON.stringify(articles, null, 2), (err) => {
-                    if (err) {
-                        console.log('atcoder err 1');
-                    }
-                    // console.log("successfully written")
-                })
+                if (articles.length > 0) {
+                    fs.writeFile(path.join(__dirname, '../public/', 'atcoder.json'), JSON.stringify(articles, null, 2), (err) => {
+                        if (err) {
+                            console.log('atcoder err 1');
+                        }
+                        // console.log("successfully written")
+                    })
+                }
             })
             .catch(err => console.log(err));
     }
